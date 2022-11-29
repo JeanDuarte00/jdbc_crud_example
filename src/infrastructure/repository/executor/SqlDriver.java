@@ -5,10 +5,10 @@ import java.util.Optional;
 
 public abstract class SqlDriver implements ISqlDriver{
 
-    protected String user = "attwvxyq";
-    protected String senha = "ZzyjHYp7Vs5DL-vM2wa16O7BdP_4myOF";
-    protected String url = "jdbc:postgresql://babar.db.elephantsql.com:5432/attwvxyq";
-    private String driver = "org.postgresql.Driver";
+    protected String user;
+    protected String senha;
+    protected String url;
+    private String driver;
 
     public SqlDriver() {}
     public SqlDriver(String user, String senha, String url) {

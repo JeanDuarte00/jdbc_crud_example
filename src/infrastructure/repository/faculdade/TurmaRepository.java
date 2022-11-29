@@ -2,6 +2,7 @@ package infrastructure.repository.faculdade;
 
 import domain.faculdade.entity.Turma;
 import infrastructure.repository.Repository;
+import infrastructure.repository.executor.ISqlDriver;
 
 import java.sql.Array;
 import java.sql.ResultSet;
@@ -12,6 +13,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 public class TurmaRepository extends Repository<Turma> {
+
+    public TurmaRepository(ISqlDriver driver) {
+        super(driver);
+    }
+
     @Override
     public boolean create(Turma object) {
         return false;

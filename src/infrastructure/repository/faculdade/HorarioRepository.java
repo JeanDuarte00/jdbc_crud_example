@@ -16,6 +16,10 @@ import java.util.UUID;
 
 public class HorarioRepository extends Repository<Horario> {
 
+    public HorarioRepository(ISqlDriver driver) {
+        super(driver);
+    }
+
     @Override
     public boolean create(Horario object) {
         return false;

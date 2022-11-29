@@ -9,6 +9,8 @@ import domain.pessoa.entity.Contato;
 import domain.pessoa.entity.Professor;
 import domain.pessoa.enums.Genero;
 import infrastructure.repository.CrudRepository;
+import infrastructure.repository.executor.ISqlDriver;
+import infrastructure.repository.executor.PostgresDriver;
 import infrastructure.repository.faculdade.HorarioRepository;
 import infrastructure.repository.faculdade.TurmaRepository;
 
@@ -44,10 +46,12 @@ public class Main {
         Turma turma1 = new Turma().adicionarAluno(aluno).adicionarAluno(aluno1);
         Turma turma2 = new Turma().adicionarAluno(aluno2).adicionarAluno(aluno3);
 
-        //CrudRepository repository = new HorarioRepository();
-        //List<Horario> list = repository.readAll();
+        ISqlDriver driver = new PostgresDriver();
 
-        CrudRepository repositoryTurma = new TurmaRepository();
+        CrudRepository repository = new HorarioRepository(driver);
+        List<Horario> list = repository.readAll();
+
+        CrudRepository repositoryTurma = new TurmaRepository(driver);
         List<Turma> listTurma = repositoryTurma.readAll();
 
 

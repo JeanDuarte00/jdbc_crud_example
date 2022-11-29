@@ -6,8 +6,8 @@ import infrastructure.repository.executor.PostgresDriver;
 public abstract class Repository<T> implements CrudRepository<T>{
 
     protected ISqlDriver driver;
-    public Repository(){
-        this.driver = new PostgresDriver();
+    public Repository(ISqlDriver driver){
+        this.driver = driver;
     }
 
 }
